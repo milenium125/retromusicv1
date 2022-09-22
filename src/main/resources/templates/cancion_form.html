@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body class="pt-2 ps-5 overflow-hidden">
+    <div class="shadow w-75 p-5 pt-1">
+        <h4 class="ps-1">Agregar Cancion</h4><br>
+        <form th:action="@{/saveCancion}" th:object="${file}" method="post" enctype="multipart/form-data">
+            <div class="col-5">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" placeholder="Escriba el nombre..." class="form-control" name="nombre">
+            </div>
+            <div class="col-5">
+                <label for="autor" class="form-label">ID Autor</label>
+                <input type="number" placeholder="Escriba el autor..." class="form-control" name="idAutor">
+            </div>
+            <div class="col-5">
+                <label for="categoria" class="form-label">Categoria</label>
+                <input type="text" placeholder="Escriba la categoria..." class="form-control" name="categoria">
+            </div>
+            <div class="col-5">
+                <label for="disco" class="form-label">Disco</label>
+                <input type="text" placeholder="Escriba el disco..." class="form-control" name="disco">
+            </div>
+            <div class="col-5">
+                <label for="genero" class="form-label">Genero</label>
+                <input type="text" placeholder="Escriba el genero" class="form-control" name="genero">
+            </div>
+            <div class="col-5">
+                <label for="imagen" class="form-label">Imagen</label><br>
+                <input type="file" class="form-control" name="files">
+            </div>
+            <div class="col-5">
+                <label for="audio" class="form-label">Audio</label><br>
+                <input type="file" class="form-control" name="files">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-outline-success text-decoration-none mt-4">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</body>
+</html>

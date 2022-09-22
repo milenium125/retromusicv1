@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retromusic</title>
+
+    <link rel="stylesheet" th:href="@{/css2/bootstrap.min.css}" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
+</head>
+<body>
+
+    <!-- NAVBAR-->
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background:linear-gradient(30deg, #d69e07,#393939);">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+
+                <img src="img/logo.png" alt="" width="200">                
+
+            </a>
+
+            <button class="navbar-toggler" type="buttom" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedcontent" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon">
+
+
+
+                </span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#">Biblioteca</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="Ayuda.html">Ayuda</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="usuarios/registro">Regístrate</a></li>
+
+                    <li class="btn btn-warning"><a href="login" class="nav-link"><p class="text-dark h5">Iniciar sesión</p> </a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- CARROUSEL AND MID SECTION-->
+
+
+    <div class="container-fluid" style="background:linear-gradient(30deg, #080807,#393939, #393939);">
+        
+        <div class="row">
+          <div class="col-2" style="background:linear-gradient(90deg, #d69e07,#393939);">
+          </div>
+          <div class="col-md-8">
+            <div id="mainSlider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner rounded-lg p-5">
+                  <div class="carousel-item ">
+                    <img src="#" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item active">
+                    <img src="img/img7.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/imagen1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                  </div>
+                </div>    
+            </div>
+          </div>
+          <div class="col-2" style="background:linear-gradient(120deg,#000000 ,#d69e07);">
+          </div>
+        </div>
+        
+      </div>
+
+
+
+
+
+
+
+   
+    
+
+    <!-- RIBBON-->
+    <!-- SEPARADOR RIBBON-->
+    <!-- PLAYLIST-->
+
+    <div id="playlist">
+        <div class="container-fluid p-5" style="background:linear-gradient(30deg, #080807,#393939, #393939);">
+          
+          <div class="row pt-5">
+              <h3 class="text-center pb-5 pt-5 h1" ><a href="#">Retromusic playlist</a></h3>
+          </div>
+  
+          <div class="row">
+              <div class="col-sm">
+                  <div class="card w-100 card-border mb-2">
+                      <img src="img/img4.jpg" class="card-img-top" alt="100px">
+                      <div class="card-body">
+                        <h5 class="card-title">Recomendaciones del día</h5>
+                        <p class="card-text">Los titulos más sonados y más revividos del momento, escuchalos aquí.</p>
+                      </div>
+                    </div>
+              </div>
+              <div class="col-sm">
+                  <div class="card w-100 card-border mb-5">
+                      <img src="img/img3.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Clásicos retros 70's</h5>
+                        <p class="card-text">Revive las mejores canciones de los 70´s, que esperas para disfrutar.</p>
+                      </div>
+                    </div>
+              </div>
+              <div class="col-sm">
+                  <div class="card w-100 card-border mb-5">
+                      <img src="img/img4.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Clásicos retros 80's</h5>
+                        <p class="card-text">Revive las mejores canciones de los 80´s, que esperas para disfrutar.</p>
+                      </div>
+                    </div>
+              </div>
+              <div class="col-sm">
+                <div class="card w-100 card-border mb-5">
+                    <img src="img/img3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Para bailar</h5>
+                      <p class="card-text">Escucha esas canciones que te transmiten energía y te llenan de alegría, que esperas para revivirlas.</p>
+                    </div>
+                  </div>
+            </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+
+    <!-- SEPARADOR-->
+    <!-- -->
+    <!-- -->
+    <!-- FOOTER-->
+
+    <div id="footer" class="p-5">
+      <div class="container w-50 pt-5">
+        <div class="row row-cols-md-2 justify-content-md-center">
+          <div class="col text-center">
+            <a href="#">
+              <button class="btn btn-lg rounded-pill btn-warning w-100  p-3 shadow-sm font-weight-bold">ATENCION AL CLIENTE</button>
+            </a>
+            
+          </div>
+        </div>
+        <div class="row justify-content-md-center py-5">
+          <div class="col text-center font-weight-light">
+            <p>For Retromusic plataform, use Parental Controls to restrict EXPLICIT CONTENT mode for children 16 and under.</p>
+            <p>Internet access required for online features. For more info, go to support.retromusic.com.</p>
+            <p>The music used is free or paid to acquire copyright. The use of the platform must be subject to the terms and conditions. The sale of memberships by third parties is strictly prohibited.</p>
+            <p>© 2022 Retromusic. Retromusic properties are trademarks of Retromusic.</p>
+          </div>
+          
+        </div>
+        <div class="row"></div>
+      </div>
+    </div>
+
+    <script src="@{/js2/popper.min.js}"></script>
+    <script src="@{/js2/bootstrap.min.js}"></script>
+
+</body>
+</html>

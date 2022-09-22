@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org" class="html">
+    <head>
+        <title>boceto-panelO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <link th:href="@{/css/styles.css}" rel="stylesheet">
+        <script th:src="@{/js/script.js}"></script>
+        
+        <script src="https://kit.fontawesome.com/c9c2875ea1.js" crossorigin="anonymous"></script>
+    </head>
+    <body onload="validar_cookie('operario'),fillFrame('dash-operario')"class="body">
+      <div class="super-contenedor-panelO pe-0">
+        <div class="super-contenedor2 container-fluid ps-0">
+            <aside class="logo border-end col-2 border-bottom mb-0 mt-0 ps-0 pt-1 row" id="aside-operario" style="width:15%;">
+                <div class="contentenido-fijo container-fluid sticky-top p-0" id="aside">
+                    <img th:src="@{/images/logoRetroMusic-removebg.png}" class="img-fluid logo-retro" alt="RetroMusic">
+                <div class="menu mt-10">
+                  <ul class="list-group menu-bar">
+                    <li class="list-group-item item-list">
+                          <a class="side-bar" href="#" onclick="fillFrame('dash-operario')"><i class="fa-brands fa-microsoft iconos" ></i><span class="texto-aside">Dashboard</span></a>
+                        </li>
+                        <li class="list-group-item item-list">
+                          <a class="side-bar" href="#" onclick="fillFrame('añadir')"><i class="fa-solid fa-plus iconos"></i><span class="texto-aside">Añadir</span></a>
+                        </li>
+                        <li class="list-group-item item-list">
+                          <a class="side-bar" onclick="fillFrame('music-operario',0)"><i class="fa-solid fa-music iconos" style="color: darkblue;"></i><span class="texto-aside">Canciones</span></a>
+                        </li>
+                        <li class="list-group-item item-list">
+                          <a class="sub-menu" onclick="fillFrame('music-operario',1)"><i class="fa-solid fa-calendar-plus iconos2"></i><span class="texto-aside">Recientes</span></a>
+                        </li>
+                        <li class="list-group-item item-list">
+                          <a class="sub-menu" onclick="fillFrame('music-operario',2)"><i class="fa-solid fa-music iconos2"></i><span class="texto-aside">Pistas</span></a>
+                        </li>
+                        <li class="list-group-item item-list">
+                          <a class="sub-menu" onclick="fillFrame('music-operario',3)"><i class="fa-solid fa-user-tie iconos2"></i><span class="texto-aside">Artistas</span></a>
+                        </li>
+                        <!-- <li class="list-group-item item-list">
+                          <a class="sub-menu">Albumes</a>
+                        </li> -->
+                        
+                      </ul>   
+                    
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+                </aside>
+                <div class="contenido-central overflow-auto col-12 pe-0">
+                  <header class="superior header border-bottom col-12 pb-2 pt-2 m-0 flex-nowrap" style="margin-left: 1% !important;">
+                    <div class="d-inline-block align-items-center search col-7" >
+                      <form class="w-100 ms-0 buscador ms-2" role="search">
+                        <input type="search" class="form-control" placeholder="Search..." aria-label="Search"> 
+                      </form>
+                    </div>
+                      <!--<div class="boton-buscar col-sm-2 m-1 "> -->
+                        <button type="button" class="btn btn-primary btn-buscar ms-3">Buscar</button>
+                        <!--</div> -->
+                        <div class="avatar-panel col-3">
+                          <div id="contenedor-iconos">
+                            <i class="fa-solid fa-envelope"></i>
+                            <i class="fa-solid fa-bell d-inline-block bell "></i>
+                            <a href="#" class="d-inline-block link-dark text-decoration-none dropdown-toggle ps-0 ms-2" data-bs-toggle="dropdown" aria-expanded="false" id="avatar">
+                              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                            </a>
+                          </div>  
+                          
+                        </div>     
+                      </header>            
+                      <div class="contenido container-fluid col-12 ps-0 pt-3 pe-0">
+                      <div id="contenido-reportes">
+                        <div class="title-mini-reports">
+                          <h5 class="ms-4">Indicadores</h5>
+                        </div>                      
+                        <div class="mini-reportes ms-2 mb-2 d-flex flex-row">
+                          <div class="report-new-songs border-primary rounded-1 ms-3 d-flex flex-row shadow" style="border-left: 3px solid;">
+                            <div class="contenido-ns ms-1 mt-2 m-0">
+                              <div class="title-ns">
+                                <h6>Nuevas Canciones</h4>
+                              </div>
+                              <div class="dato-ns">
+                                <span>dato</span>
+                              </div>
+                            </div>
+                            <div class="icon-ns ms-2 border-start h-100 p-3 ">
+                              <i class="fa-solid fa-music text-muted"></i>
+                            </div>
+                          </div>
+                          <div class="report-new-users border-warning border-start-3 ms-3 rounded-1 d-flex flex-row shadow" style="border-left: 3px solid;">
+                            <div class="contenido-nu ms-1 mt-2">
+                              <div class="title-nu ">
+                                <h6>Nuevos Usuarios</h4>
+                              </div>
+                              <div class="dato-nu">
+                                dato
+                              </div>
+                            </div>
+                            <div class="icon-nu ms-2 border-start h-100 p-3">
+                              <i class="fa-solid fa-user-plus text-muted"></i>
+                            </div>
+                          </div>
+                          <div class="report-delete-users border-secondary rounded-1 ms-3 d-flex flex-row shadow" style="border-left: 3px solid;">
+                            <div class="contenido-du ms-1 mt-2">
+                              <div class="title-du">
+                                <h6>Usuarios desertados</h4>
+                              </div>
+                              <div class="dato-du">
+                                dato
+                              </div>
+                            </div>   
+                            <div class="icon-du ms-2 border-start h-100 p-3">
+                              <i class="fa-solid fa-user-minus text-muted"></i>
+                            </div>                       
+                          </div>  
+                          <div class="report-songs-wait border-info rounded-1 d-flex flex-row shadow ms-3" style="border-left: 3px solid;">
+                            <div class="contenido-ns ms-1 mt-2 mb-2">
+                              <div class="title-sw">
+                                <h6>Canciones en espera</h4>
+                              </div>
+                              <div class="dato-sw">
+                                dato
+                              </div>
+                            </div>
+                            <div class="icon-sw ms-2 border-start h-100 p-3">
+                              <i class="fa-solid fa-check-double text-muted"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="contenido col-12 pt-3 overflow-auto" id="sub-frame">
+                        <!-- <iframe src="http://localhost:8080/añadir" class="w-100 frame-operario mt-2 ms-2" id="sub-frame" ></iframe> -->
+                      </div>
+                      
+                    
+            </div>  
+            <footer class="border-top container-fluid reproductor pt-2 pb-2 container-fluid">
+              <div class="controls pe-2 ps-2 mb-0 col-2 mt-4">
+                <div class="ms-3 me-3">
+                  <i class="fa-solid fa-backward-step"></i>
+                </div>
+                <div class="ms-3 me-3" id="play" onclick="play_pause(),ajustarVolume()">
+                  <i class="fa-solid fa-play w-100"></i>
+                </div>
+                <div class="ms-3 me-3 pause" id="pause" onclick="play_pause()">
+                  <i class="fa-solid fa-pause w-100"></i>
+                </div>
+                <div class="ms-3 me-3">
+                  <i class="fa-solid fa-forward-step"></i>
+                </div>                         
+              </div>
+              <div class="player-track col-7">
+                <div class="tracker-min mt-4">
+                  <span id="time-in">00:00</span>
+                </div>
+                <div class="audio">
+                  <audio id="audio-ope" th:src="@{/audio/la-cosa-mas-bella-piu-bella-cosa-official-video.mp3}">
+                    Navegador no compatible
+                  </audio>
+                </div>
+                <div class="centro-tracker col-10">
+                  <div class="ms-5" id="info-cancion-footer">
+                    <span id="titulo-pista" style="font-size: 0.6rem; color: #fff;">no se ha cargado ninguna cancion</span>
+                  </div>
+                  <div class="progress-tracker me-0">
+                    <div class="progress bg-light mt-2 h-25">
+                      <input class="progress-bar w-100" type="range" value="0" id="progress-bar" onchange="ajustarTiempoReproduccion()"></input>               
+                    </div>
+                  </div>
+                </div>
+                <div class="tracker-max mt-4">
+                  <span id="time-out">00:00</span>
+                </div>
+              </div>
+              <div class="col1 me-3 mt-3" id="contenedor-img-pista">
+                <img th:src="@{/images/Captura.jpg}" id="img-pista" style="height: 5vh;width: 5vh;">
+              </div>
+              <div class="player-options col-2 mt-4">
+                <div class="ms-3 me-3">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+                <div class="ms-3 me-3">
+                  <i class="fa-solid fa-shuffle"></i>
+                </div>
+                <div class="ms-3 me-3" id="volumen" onclick="mostrarRange()">
+                  <i class="fa-solid fa-volume-high" ></i>
+                </div>
+                <div class="ms-3 me-3" id="mute" onclick="mostrarRange()">
+                  <i class="fa-solid fa-volume-xmark"></i>
+                </div>
+                <div class="control-volume" id="control-volume">
+                  <input type="range" value="100" id="range-volume" onchange="ajustarVolume()">
+                </div>
+              </div>
+          </footer>
+        </div>
+    </body>
+</html>

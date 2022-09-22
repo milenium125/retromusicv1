@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title> Create new account </title>
+    <script src="https://kit.fontawesome.com/ee437a163e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body{
+            background: #D69E07;
+            background: linear-gradient(to right, #393939, #D69E07);
+            font-family: 'Roboto Mono', monospace;
+        }
+        .bg{
+            background-image: url(/imagen2/screen-4.jpg);
+            background-position: center center;
+        }
+    </style>  
+   
+</head>
+<body>
+    <div class="container w-75  mt-5 rounded shadow">
+        <div class="row align-items-stretch">
+            <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6">
+            </div>
+            <div class="col bg-white p-5 rounded-end">
+                <div class="text-end">
+                    <img th:src="@{/images/logoRetroMusic-removebg.png}" width="120" alt="
+                    ">
+                    
+                </div>
+                <div class="valid-feedback" id="creacion-correcta">
+                    Cuenta creada satisfactoriamente.
+                </div>
+                <h2 class="fw-bold text-center py-4">Create new account</h2>
+                <!-- <form class="needs-validation" th:action="@{/usuarios}" method="post" novalidate> -->
+                    <label for="username" class="form-label" >Username</label>
+                    <div class="input-group mb-4">
+                    <input type="text"  class="form-control" name="nombreUsuario" aria-label="username" aria-describedaby="username" id="user" onblur="dataCorrect('user')" required>
+                    <div class="invalid-feedback" id="alerta-user">
+                        Por favor ingrese un usuario valido.
+                    </div>
+                </div>
+                
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-group mb-4">
+                    <input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" class="form-control" name="correoElectronico" aria-label="email" aria-describedaby="email" id="email" onblur="dataCorrect('email')" required>
+                    <div class="invalid-feedback" id="alerta-email">
+                        Por favor ingrese un email valido.
+                    </div>
+                </div>
+        
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group mb-4">
+                    <input type="password"  class="form-control" name="contraseña" aria-label="contrasena" aria-describedaby="contrasena" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password" onblur="dataCorrect('password')" required/>
+                    <div class="invalid-feedback" id="alerta-password">
+                        Debe contener 8 o más caracteres que sean al menos un número y una letra mayúscula y minúscula.
+                    </div>
+                </div>
+                    <br><br>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-warning btn-sm" onclick="validar_registro(),createUser(0)">New account</button>
+                    </div>
+                    <div class="EmailForm_Center-jwtojv-0 itqisk">
+                        <p class="Type_TypeElement-goli3j-0 grNKmg">
+                            <span class="LinkContainer-sc-1t58wcv-0 fyLrlP">
+                                Al registrarse acepte los 
+                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                    Terminos y condiciones</a>
+                                     y la 
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        Politicas de privaciodad de RetroMusic</a>.
+                            </span>
+                        </p>
+                        </div>
+                
+            <!-- </form> -->
+                    <!-- <div class="EmailForm_Center-jwtojv-0 itqisk">
+                    <p class="Type_TypeElement-goli3j-0 grNKmg">
+                        <span class="LinkContainer-sc-1t58wcv-0 fyLrlP">
+                            Al registrarse acepte los 
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                Terminos y condiciones</a>
+                                 y la 
+                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                    Politicas de privaciodad de RetroMusic</a>.
+                        </span>
+                    </p>
+                    </div> -->
+                
+                
+
+                <!-- LOGIN CON REDES SOCIALES -->
+                <div class="container w-100 my-5">
+                    <div class="row text-center">
+                        <div class="col-12">Sing in with</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-outline-primary w-100 my-1">
+                                <div class="row aling-items-center">
+                                    <div class="col-2">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </div>
+                                    <div class="col-10 text-center">
+                                        Facebook
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-info w-100 my-1">
+                                <div class="row aling-items-center">
+                                    <div class="col-2">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </div>
+                                    <div class="col-10 text-center">
+                                        Twitter
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-danger w-100 my-1">
+                                <div class="row aling-items-center">
+                                    <div class="col-2">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </div>
+                                    <div class="col-10 text-center">
+                                        Instagram
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+        }, false)
+        })
+    })()
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script th:src="@{/js/script.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</html>  

@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Tiro+Telugu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+:root {
+	--primario: #3b3a3a;
+	--gris-claro: #B8B8B8;
+	--sombra: 0 0 13px 0 rgba(185,185,185, .25);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #D69E07;
+    background: linear-gradient(to left, #393939, #D69E07);
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 700;
+    color: black;
+}
+
+main {
+	max-width: 1000px;
+	width: 90%;
+	margin: 40px auto;
+}
+
+.titulo {
+	font-weight: 700;
+    color: rgb(255, 255, 255);
+	text-align: center;
+	margin: 60px 0;
+}
+
+.Subtitulo {
+	font-weight: 700;
+    color: rgb(255, 255, 255);
+	text-align: center;
+	margin: 60px 0;
+}
+
+.Message{
+	background-position: 50%;
+	background-color:  rgb(144, 154, 175);
+	color: rgb(0, 0, 0);
+}
+
+a{
+    color: #d65214;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ff7b00;
+}
+
+
+/*! =================================================*/
+/*! ============= Contenedor Preguntas ============= */
+/*! =================================================*/
+.contenedor-preguntas {
+	display: none;
+	grid-template-columns: 1fr;
+	gap: 40px;
+	
+}
+
+.contenedor-preguntas.activo {
+	display: grid;
+}
+
+.contenedor-pregunta {
+	background: rgb(144, 154, 175);
+	padding: 40px;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: .3s ease all;
+	cursor: pointer;
+}
+
+.contenedor-pregunta:hover {
+	box-shadow: var(--sombra);
+}
+
+.contenedor-pregunta.activa {
+	border: 2px solid var(--primario);
+}
+
+/*! =================================================*/
+/*! ============= Preguntas ============= */
+/*! =================================================*/
+.pregunta {
+	font-weight: 700;
+	color: rgb(0, 0, 0);
+	text-decoration: solid;
+	font-size: 20px;
+	line-height: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.pregunta img {
+	width: 14px;
+}
+
+.respuesta {
+	color: #f0e9e9;
+	font-weight: 300;
+	line-height: 30px;
+	max-height: 0;
+	opacity: 0;
+	transition: .3s ease all;
+}
+
+.contenedor-pregunta.activa .respuesta {
+	opacity: 1;
+	margin-top: 20px;
+}
+
+.contenedor-pregunta.activa img {
+	transform: rotate(45deg);
+}
+/*! =================================================*/
+/*! ============= FORMULARIOO ============= */
+/*! =================================================*/
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    width: 40%;
+    height: 80%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0,0,0,0.8) 0px 0px 50px;
+    border-radius: 10px;
+}
+
+input, textarea{
+    border: none;
+    resize: none;
+    outline: none;
+    padding: 15px 0px;
+    width: 80%;
+    margin: 20px;
+    transition: all 300ms;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+input:focus, textarea:focus{
+    border-bottom-color: #610061 ;
+}
+
+
+.Button{
+    border: none;
+    outline: none;
+    background-color: black;
+    width: 200px;
+    color: white;
+    border-radius: 2px;
+    box-shadow: rgba(0,0,0,0.7) 0px 0px 10px;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.Button:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(0,0,0,0.9) 0px 0px 10px;
+}
+
+
+@media screen and (max-width:1100px){
+    form{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:600px){
+    form{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:450px){
+    form{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:300px){
+    form{
+        width: 90%;
+    }
+}

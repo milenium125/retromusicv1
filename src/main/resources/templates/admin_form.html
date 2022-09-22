@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body class="pt-2 ps-5 overflow-hidden">
+    <div class="shadow w-75 p-5 pt-1">
+        <h4 class="ps-1">Crear Usuario Administrador</h4><br>
+        <form class="needs-validation" novalidate>
+            <label for="username" class="form-label" >Username</label>
+            <div class="input-group mb-4">
+            <input type="text"  class="form-control" name="nombreUsuario" aria-label="username" aria-describedaby="username" id="user1" required>
+            <div class="invalid-feedback">
+                Por favor ingrese un usuario valido.
+            </div>
+        </div>
+        
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group mb-4">
+            <input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" class="form-control" name="correoElectronico" aria-label="email" aria-describedaby="email" id="email1" required>
+            <div class="invalid-feedback">
+                Por favor ingrese un email valido.
+            </div>
+        </div>
+
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group mb-4">
+            <input type="password"  class="form-control" aria-label="contrasena" aria-describedaby="contrasena" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password1" required/>
+            <div class="invalid-feedback">
+                Debe contener 8 o más caracteres que sean al menos un número y una letra mayúscula y minúscula.
+            </div>
+        </div>
+            <br><br>
+            <div class="d-grid gap-2">
+                <button class="btn btn-outline-warning btn-sm" onclick="createUser(1)">New account</button>
+            </div>
+
+        
+    </form>
+    </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+        'use strict'
+    
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+    
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
+    
+                form.classList.add('was-validated')
+            }, false)
+            })
+        })()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script th:src="@{/js/script.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    
+</body>
+</html>
+
